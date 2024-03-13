@@ -3,7 +3,13 @@ const webpack = require('webpack');
 /** @type { import('@storybook/html-webpack5').StorybookConfig } */
 const config = {
   stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|mjs|ts)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions'],
+
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@storybook/addon-webpack5-compiler-babel',
+  ],
   framework: {
     name: '@storybook/html-webpack5',
     options: {},
@@ -19,9 +25,6 @@ const config = {
       }),
     );
     return config;
-  },
-  features: {
-    storyStoreV7: true,
   },
 };
 export default config;
